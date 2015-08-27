@@ -40,12 +40,12 @@ module.exports = yeoman.generators.Base.extend({
         message: 'What is your project description?',
       },
       {
-        name: 'username',
-        message: 'What is your Github username (or organization)?',
+        name: 'name',
+        message: 'What is your full name or company?',
       },
       {
-        name: 'name',
-        message: 'What is your name or company?',
+        name: 'username',
+        message: 'What is your Github username (or organization)?',
       },
       {
         name: 'karma',

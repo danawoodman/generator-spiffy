@@ -1,7 +1,7 @@
 # <%= props.appname %>
 
-![](https://img.shields.io/travis/<%= props.name %>/<%= props.appname %>.svg)
-[![Requirements Status](https://requires.io/github/<%= props.name %>/<%= props.appname %>/requirements.svg?branch=master)](https://requires.io/github/<%= props.name %>/<%= props.appname %>/requirements/?branch=master)
+![](https://img.shields.io/travis/<%= props.username %>/<%= props.appname %>.svg)
+[![Requirements Status](https://requires.io/github/<%= props.username %>/<%= props.appname %>/requirements.svg?branch=master)](https://requires.io/github/<%= props.username %>/<%= props.appname %>/requirements/?branch=master)
 <% if (props.isNpmModule) { %>![](https://img.shields.io/npm/dm/<%= props.appname %>.svg)
 ![](https://img.shields.io/npm/v/<%= props.appname %>.svg)<% } %>
 
