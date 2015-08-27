@@ -1,0 +1,43 @@
+{
+  "name": "<%= props.appname %>",
+  "description": "<%= props.description %>",
+  "config": {
+    "entry": "src/index.js"
+  },
+  "scripts": {
+    "build": "npm run lint && npm test && npm run docs",
+    "watch": "mocha -w",
+    "docs": "jsdoc2md $npm_package_config_entry > api.md",
+    "lint": "eslint .",
+    "test": "mocha"
+  },
+  "version": "0.0.0",
+  "keywords": [
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/<%= props.username %>/<%= props.appname %>/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<%= props.username %>/<%= props.appname %>.git"
+  },
+  "author": "<%= props.name %>",
+  "homepage": "https://github.com/<%= props.username %>/<%= props.appname %>#readme",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "eslint": "^1.2.1",
+    "eslint-plugin-nodeca": "^1.0.3",
+    "jsdoc-to-markdown": "^1.1.1",
+    "mocha": "^2.2.5",
+    "mocha-sinon": "^1.1.4",
+    "sinon": "^1.16.1",
+    "sinon-chai": "^2.8.0"
+  },
+  "dependencies": {
+
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
