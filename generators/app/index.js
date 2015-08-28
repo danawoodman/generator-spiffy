@@ -7,7 +7,7 @@ var ejs = require('ejs')
 var mkdirp = require('mkdirp')
 
 var NODE_MODULE_CHOICE = 'NPM module'
-var APPLICATION_CHOICE = 'Web application (React, Reflux, WebPack, etc...)'
+//var APPLICATION_CHOICE = 'Web application (React, Reflux, WebPack, etc...)'
 
 module.exports = yeoman.generators.Base.extend({
   initializing: function () {
@@ -24,16 +24,16 @@ module.exports = yeoman.generators.Base.extend({
     ))
 
     var prompts = [
-      {
-        type: 'list',
-        name: 'projectType',
-        message: 'What kind of project is this?',
-        choices: [
-          NODE_MODULE_CHOICE,
-          APPLICATION_CHOICE,
-        ],
-        default: 0,
-      },
+      //{
+        //type: 'list',
+        //name: 'projectType',
+        //message: 'What kind of project is this?',
+        //choices: [
+          //NODE_MODULE_CHOICE,
+          ////APPLICATION_CHOICE,
+        //],
+        //default: 0,
+      //},
       {
         name: 'appname',
         message: 'What\'s the name of the project?',
@@ -57,8 +57,8 @@ module.exports = yeoman.generators.Base.extend({
     this.prompt(prompts, function (props) {
       this.props = props
 
-      this.props.isNpmModule = props.projectType === NODE_MODULE_CHOICE
-      this.props.isApp = props.projectType === APPLICATION_CHOICE
+      this.props.isNpmModule = true // props.projectType === NODE_MODULE_CHOICE
+      this.props.isApp = false //props.projectType === APPLICATION_CHOICE
       this.props.karma = this.props.isApp
       this.props.camelAppName = camelCase(props.appname)
 
