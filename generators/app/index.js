@@ -37,7 +37,7 @@ module.exports = yeoman.generators.Base.extend({
       {
         name: 'appname',
         message: 'What\'s the name of the project?',
-        default: this.pkg.name || this.destinationRoot().split(path.sep).slice(-1)[0] || 'spiffy-app',
+        default: this.destinationRoot().split(path.sep).slice(-1)[0] || 'spiffy-app',
         // TODO: Slugify name...
       },
       {
