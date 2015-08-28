@@ -27,6 +27,7 @@ describe('spiffy:app', function () {
         '.editorconfig',
         '.gitignore',
         '.travis.yml',
+        '.npmignore',
         'readme.md',
         'license',
         '.nvmrc',
