@@ -1,4 +1,8 @@
-# generator-spiffy [![Build Status](https://secure.travis-ci.org/danawoodman/generator-spiffy.png?branch=master)](https://travis-ci.org/danawoodman/generator-spiffy)
+# generator-spiffy
+
+[![Build Status](https://img.shields.io/travis/danawoodman/generator-spiffy.svg)](https://travis-ci.org/danawoodman/generator-spiffy)
+[![](https://img.shields.io/npm/v/generator-spiffy.svg)](https://www.npmjs.com/package/generator-spiffy)
+[![](https://img.shields.io/npm/dm/generator-spiffy.svg)](https://www.npmjs.com/package/generator-spiffy)
 
 > [Yeoman](http://yeoman.io) generator to bootstrap NPM modules and web applications
 
