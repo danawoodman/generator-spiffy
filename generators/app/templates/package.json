@@ -1,5 +1,6 @@
 {
   "name": "<%= props.appname %>",
+  "version": "0.0.0",
   "description": "<%= props.description %>",
   "main": "lib/index.js",
   "config": {
@@ -17,7 +18,6 @@
     "watch-build": "npm run build -- --watch",
     "watch-test": "npm run test -- -w"
   },
-  "version": "0.0.0",
   "keywords": [
   ],
   "license": "MIT",
