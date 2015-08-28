@@ -3,16 +3,16 @@
   "description": "<%= props.description %>",
   "main": "lib/index.js",
   "config": {
-    "entry": "src/index.js",
-    "output": "lib/index.js"
+    "entry": "src/index.js"
   },
   "scripts": {
-    "build": "babel -o $npm_package_config_output $npm_package_config_entry",
+    "build": "babel -o $npm_package_main $npm_package_config_entry",
     "dist": "npm run lint && npm run build && npm test && npm run docs",
     "docs": "jsdoc2md $npm_package_config_entry > api.md",
     "lint": "eslint .",
-    "prepublish": "npm run dist",
-    "test": "mocha",
+    "prepublish": "npm run build",
+    "preversion": "npm run dist",
+    "test": "npm run lint && mocha",
     "watch": "npm run watch-build & npm run watch-test",
     "watch-build": "npm run build -- --watch",
     "watch-test": "npm run test -- -w"
