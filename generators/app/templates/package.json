@@ -6,10 +6,11 @@
   },
   "scripts": {
     "build": "npm run lint && npm test && npm run docs",
-    "watch": "mocha -w",
     "docs": "jsdoc2md $npm_package_config_entry > api.md",
     "lint": "eslint .",
-    "test": "mocha"
+    "prepublish": "npm run build",
+    "test": "mocha",
+    "watch": "mocha -w"
   },
   "version": "0.0.0",
   "keywords": [

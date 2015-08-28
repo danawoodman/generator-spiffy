@@ -1,14 +1,7 @@
-/* globals describe, it */
+/* globals expect, describe, it */
 /* eslint no-unused-expressions:0 */
 
-import sinon from 'sinon'
-import chai from 'chai'
-import sinonChai from 'sinon-chai'
 import <%= props.camelAppName %> from '../src'
-
-chai.use(sinonChai)
-
-const expect = chai.expect
 
 describe('<%= props.camelAppName %>', () => {
   it('should have a sane default', () => {

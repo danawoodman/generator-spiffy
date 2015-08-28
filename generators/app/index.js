@@ -97,6 +97,7 @@ module.exports = yeoman.generators.Base.extend({
         console.log('KARMA COMING SOON!')
       } else {
         this.copy('test/mocha.opts', 'test/mocha.opts')
+        this.copy('test/helper.js', 'test/helper.js')
         this.template('test/index-test.js', 'test/index-test.js')
       }
     },
