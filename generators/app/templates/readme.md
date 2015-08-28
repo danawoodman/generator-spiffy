@@ -35,4 +35,4 @@ See [the API docs](api.md) for full documentation.
 [MIT](license) &copy; [<%= props.name %>][author]
 
 
-[author]: https://github.com/<%= props.username %>/<%= props.appname %>
+[author]: https://github.com/<%= props.username %>
