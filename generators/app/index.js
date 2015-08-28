@@ -50,14 +50,12 @@ module.exports = yeoman.generators.Base.extend({
         message: 'What is your Github username or organization?',
         default: this.config.get('github_username'),
       },
-    ]
-
-    if (!this.pkg.description) {
-      prompts.push({
+      {
         name: 'description',
         message: 'What is your project description?',
-      })
-    }
+        default: this.config.get('project_description'),
+      },
+    ]
 
     this.prompt(prompts, function (props) {
       this.props = props
@@ -70,6 +68,7 @@ module.exports = yeoman.generators.Base.extend({
       // Save configuration
       this.config.set('full_name', this.props.name)
       this.config.set('github_username', this.props.username)
+      this.config.set('project_description', this.props.description)
 
       done()
     }.bind(this))
