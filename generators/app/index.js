@@ -78,10 +78,9 @@ module.exports = yeoman.generators.Base.extend({
     base: function () {
       this.copy('.editorconfig', '.editorconfig')
       this.copy('.eslintignore', '.eslintignore')
-      this.copy('.nvmrc', '.nvmrc')
-      this.copy('.gitignore', '.gitignore')
+      this.copy('nvmrc', '.nvmrc')
+      this.copy('gitignore', '.gitignore')
       this.copy('.travis.yml', '.travis.yml')
-      this.copy('.nvmrc', '.nvmrc')
       this.copy('.npmignore', '.npmignore')
       this.template('.eslintrc', '.eslintrc')
       this.template('package.json', 'package.json')
