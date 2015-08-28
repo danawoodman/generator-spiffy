@@ -2,12 +2,14 @@ var yeoman = require('yeoman-generator')
 var chalk = require('chalk')
 var camelCase = require('camelcase')
 var yosay = require('yosay')
+var ejs = require('ejs')
 
 var NODE_MODULE_CHOICE = 'NPM module'
 
 module.exports = yeoman.generators.Base.extend({
   initializing: function () {
     this.pkg = require('../../package.json')
+    this.engine = ejs.render
   },
 
   prompting: function () {
