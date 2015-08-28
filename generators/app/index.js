@@ -37,22 +37,27 @@ module.exports = yeoman.generators.Base.extend({
       {
         name: 'appname',
         message: 'What\'s the name of the project?',
-        default: this.destinationRoot().split(path.sep).slice(-1)[0] || 'spiffy-app',
+        default: this.pkg.name || this.destinationRoot().split(path.sep).slice(-1)[0] || 'spiffy-app',
         // TODO: Slugify name...
-      },
-      {
-        name: 'description',
-        message: 'What is your project description?',
       },
       {
         name: 'name',
         message: 'What is your full name or company?',
+        default: this.config.get('full_name'),
       },
       {
         name: 'username',
-        message: 'What is your Github username (or organization)?',
+        message: 'What is your Github username or organization?',
+        default: this.config.get('github_username'),
       },
     ]
+
+    if (!this.pkg.description) {
+      prompts.push({
+        name: 'description',
+        message: 'What is your project description?',
+      })
+    }
 
     this.prompt(prompts, function (props) {
       this.props = props
@@ -61,6 +66,10 @@ module.exports = yeoman.generators.Base.extend({
       this.props.isApp = false //props.projectType === APPLICATION_CHOICE
       this.props.karma = this.props.isApp
       this.props.camelAppName = camelCase(props.appname)
+
+      // Save configuration
+      this.config.set('full_name', this.props.name)
+      this.config.set('github_username', this.props.username)
 
       done()
     }.bind(this))
