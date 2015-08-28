@@ -1,4 +1,3 @@
-/* globals expect, describe, it */
 /* eslint no-unused-expressions:0 */
 
 import <%= props.camelAppName %> from '../src'
