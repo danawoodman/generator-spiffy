@@ -1,4 +1,5 @@
 var yeoman = require('yeoman-generator')
+var path = require('path')
 var chalk = require('chalk')
 var camelCase = require('camelcase')
 var yosay = require('yosay')
@@ -36,7 +37,7 @@ module.exports = yeoman.generators.Base.extend({
       {
         name: 'appname',
         message: 'What\'s the name of the project?',
-        default: 'spiffy-app'
+        default: this.destinationRoot().split(path.sep).slice(-1)[0] || 'spiffy-app',
         // TODO: Slugify name...
       },
       {
