@@ -5,6 +5,7 @@ var yosay = require('yosay')
 var ejs = require('ejs')
 
 var NODE_MODULE_CHOICE = 'NPM module'
+var APPLICATION_CHOICE = 'Web application (React, Reflux, WebPack, etc...)'
 
 module.exports = yeoman.generators.Base.extend({
   initializing: function () {
@@ -27,7 +28,7 @@ module.exports = yeoman.generators.Base.extend({
         message: 'What kind of project is this?',
         choices: [
           NODE_MODULE_CHOICE,
-          'Web application (React, WebPack, etc...)',
+          APPLICATION_CHOICE,
         ],
         default: 0,
       },
@@ -49,17 +50,14 @@ module.exports = yeoman.generators.Base.extend({
         name: 'username',
         message: 'What is your Github username (or organization)?',
       },
-      {
-        name: 'karma',
-        message: 'Do you you need Karma?',
-        default: false,
-      },
     ]
 
     this.prompt(prompts, function (props) {
       this.props = props
 
       this.props.isNpmModule = props.projectType === NODE_MODULE_CHOICE
+      this.props.isApp = props.projectType === APPLICATION_CHOICE
+      this.props.karma = this.props.isApp
       this.props.camelAppName = camelCase(props.appname)
 
       done()
@@ -68,23 +66,38 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: {
     base: function () {
-      this.template('package.json', 'package.json')
-      this.template('license', 'license')
-      this.template('readme.md', 'readme.md')
       this.copy('.editorconfig', '.editorconfig')
-      this.copy('.eslintrc', '.eslintrc')
       this.copy('.eslintignore', '.eslintignore')
       this.copy('.nvmrc', '.nvmrc')
       this.copy('.gitignore', '.gitignore')
       this.copy('.travis.yml', '.travis.yml')
       this.copy('.nvmrc', '.nvmrc')
+      this.template('.eslintrc', '.eslintrc')
+      this.template('package.json', 'package.json')
+      this.template('license', 'license')
+      this.template('readme.md', 'readme.md')
+    },
+
+    type: function () {
+      if (this.props.isNpmModule) {
+        this.template('src/index.js', 'src/index.js')
+      } else {
+        console.log('OTHER PROJECT TYPES COMING SOON!')
+        // TODO:
+        // - React, Reflux, react-router
+        // - components/stores/actions folders
+        // - default routes file
+        // - webpack config
+        // - karma
+      }
     },
 
     tests: function () {
       if (this.props.karma) {
-        console.log('setup karma...')
+        console.log('KARMA COMING SOON!')
       } else {
-        console.log('setup mocha...')
+        this.copy('test/mocha.opts', 'test/mocha.opts')
+        this.template('test/index-test.js', 'test/index-test.js')
       }
     },
   },

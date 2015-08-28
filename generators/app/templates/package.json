@@ -25,9 +25,11 @@
   "author": "<%= props.name %>",
   "homepage": "https://github.com/<%= props.username %>/<%= props.appname %>#readme",
   "devDependencies": {
+    "babel": "^5.8.23",
     "chai": "^3.2.0",
     "eslint": "^1.2.1",
-    "eslint-plugin-nodeca": "^1.0.3",
+    "eslint-plugin-nodeca": "^1.0.3",<% if (props.isApp) { %>
+    "eslint-plugin-react",<% } %>
     "jsdoc-to-markdown": "^1.1.1",
     "mocha": "^2.2.5",
     "mocha-sinon": "^1.1.4",
@@ -35,7 +37,6 @@
     "sinon-chai": "^2.8.0"
   },
   "dependencies": {
-
   },
   "engines": {
     "node": ">=0.10.0"

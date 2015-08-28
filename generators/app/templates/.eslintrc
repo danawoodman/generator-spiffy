@@ -34,8 +34,8 @@
     "node": true
   },
   "plugins": [
-    "nodeca",
-    "react"
+    "nodeca"<% if (props.isApp) { %>,
+    "react"<% } %>
   ],
   "rules": {
     "array-bracket-spacing": [2, "always"],
@@ -85,7 +85,7 @@
     "no-use-before-define": 1,
     "nodeca/no-lodash-aliases": 2,
     "object-curly-spacing": [2, "always"],
-    "quotes": [2, "single"],
+    "quotes": [2, "single"],<% if (props.isApp) { %>,
     "react/display-name": 1,
     "react/jsx-boolean-value": 1,
     "react/jsx-quotes": 1,
@@ -101,7 +101,7 @@
     "react/prop-types": 1,
     "react/react-in-jsx-scope": 1,
     "react/self-closing-comp": 1,
-    "react/wrap-multilines": 1,
+    "react/wrap-multilines": 1,<% } %>
     "semi": [2, "never"],
     "strict": 2,
     "space-after-keywords": [2, "always"],
