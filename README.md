@@ -38,6 +38,14 @@ yo spiffy
 See the `package.json` of the generated application or run `npm run` for all available tasks.
 
 
+## TODO
+
+- [ ] Add web application generator
+    - [ ] Add `component` sub-generator
+    - [ ] Add `store` sub-generator
+    - [ ] Add `action` sub-generator
+
+
 ## License
 
 [MIT](license) &copy; [Dana Woodman][author]
