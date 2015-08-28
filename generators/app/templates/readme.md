@@ -1,9 +1,9 @@
 # <%= props.appname %>
 
-![](https://img.shields.io/travis/<%= props.username %>/<%= props.appname %>.svg)
+[![Travis CI build status](https://img.shields.io/travis/<%= props.username %>/<%= props.appname %>.svg)](https://travis-ci.org/<%= props.username %>/<%= props.appname %>)
 [![Dependency Status](https://img.shields.io/david/<%= props.username %>/<%= props.appname %>.svg)](https://david-dm.org/<%= props.username %>/<%= props.appname %>)
-<% if (props.isNpmModule) { %>![](https://img.shields.io/npm/dm/<%= props.appname %>.svg)
-![](https://img.shields.io/npm/v/<%= props.appname %>.svg)<% } %>
+<% if (props.isNpmModule) { %>[![View on npm](https://img.shields.io/npm/dm/<%= props.appname %>.svg)](https://www.npmjs.com/package/<%= props.appname %>)
+[![View on npm](https://img.shields.io/npm/v/<%= props.appname %>.svg)](https://www.npmjs.com/package/<%= props.appname %>)<% } %>
 
 > <%= props.description %>
 
