@@ -1,16 +1,21 @@
 {
   "name": "<%= props.appname %>",
   "description": "<%= props.description %>",
+  "main": "lib/index.js",
   "config": {
-    "entry": "src/index.js"
+    "entry": "src/index.js",
+    "output": "lib/index.js"
   },
   "scripts": {
-    "build": "npm run lint && npm test && npm run docs",
+    "build": "babel -o $npm_package_config_output $npm_package_config_entry",
+    "dist": "npm run lint && npm run build && npm test && npm run docs",
     "docs": "jsdoc2md $npm_package_config_entry > api.md",
     "lint": "eslint .",
-    "prepublish": "npm run build",
+    "prepublish": "npm run dist",
     "test": "mocha",
-    "watch": "mocha -w"
+    "watch": "npm run watch-build & npm run watch-test",
+    "watch-build": "npm run build -- --watch",
+    "watch-test": "npm run test -- -w"
   },
   "version": "0.0.0",
   "keywords": [

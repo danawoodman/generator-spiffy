@@ -3,6 +3,7 @@ var chalk = require('chalk')
 var camelCase = require('camelcase')
 var yosay = require('yosay')
 var ejs = require('ejs')
+var mkdirp = require('mkdirp')
 
 var NODE_MODULE_CHOICE = 'NPM module'
 var APPLICATION_CHOICE = 'Web application (React, Reflux, WebPack, etc...)'
@@ -81,6 +82,9 @@ module.exports = yeoman.generators.Base.extend({
     type: function () {
       if (this.props.isNpmModule) {
         this.template('src/index.js', 'src/index.js')
+
+        // In your generator
+        mkdirp.sync(this.destinationRoot() + '/lib')
       } else {
         console.log('OTHER PROJECT TYPES COMING SOON!')
         // TODO:
