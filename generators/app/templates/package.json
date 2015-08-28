@@ -13,7 +13,7 @@
     "lint": "eslint .",
     "prepublish": "npm run build",
     "preversion": "npm run dist",
-    "test": "npm run lint && mocha",
+    "test": "mocha",
     "watch": "npm run watch-build & npm run watch-test",
     "watch-build": "npm run build -- --watch",
     "watch-test": "npm run test -- -w"
