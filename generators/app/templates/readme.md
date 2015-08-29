@@ -20,8 +20,8 @@ npm install --save <%= props.appname %>
 ```js
 var <%= props.camelAppName %> = require('<%= props.appname %>');
 
-<%= props.camelAppName %>('unicorns');
-//=> 'unicorns & rainbows'
+<%= props.camelAppName %>('army of kittens');
+//=> 'Hello, army of kittens!'
 ```
 
 
