@@ -30,6 +30,15 @@ var <%= props.camelAppName %> = require('<%= props.appname %>');
 See [the API docs](api.md) for full documentation.
 
 
+## Contributing
+
+Pull requests welcome! 
+
+Please use the `.editorconfig`, `.eslintrc` configurations in your editor to ensure proper formatting.
+
+Run the test suite with `npm test` and linting with `npm run lint`, make sure tests are passing and that you write tests for new features.
+
+
 ## License
 
 [MIT](license) &copy; [<%= props.name %>][author]
