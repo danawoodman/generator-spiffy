@@ -29,6 +29,7 @@ describe('spiffy:app', function () {
         '.travis.yml',
         '.npmignore',
         'readme.md',
+        'changelog.md',
         'license',
         '.nvmrc',
         '.eslintrc',
