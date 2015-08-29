@@ -1,6 +1,6 @@
 {
   "name": "generator-spiffy",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "description": "Yeoman generator to boostrap NPM modules and web applications",
   "license": "MIT",
   "main": "app/index.js",
