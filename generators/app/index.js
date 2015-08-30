@@ -5,6 +5,7 @@ var camelCase = require('camelcase')
 var yosay = require('yosay')
 var ejs = require('ejs')
 var mkdirp = require('mkdirp')
+var parentFolder = require('parent-folder')
 
 var NODE_MODULE_CHOICE = 'NPM module'
 //var APPLICATION_CHOICE = 'Web application (React, Reflux, WebPack, etc...)'
@@ -37,7 +38,7 @@ module.exports = yeoman.generators.Base.extend({
       {
         name: 'appname',
         message: 'What\'s the name of the project?',
-        default: this.destinationRoot().split(path.sep).slice(-1)[0] || 'spiffy-app',
+        default: parentFolder(this.destinationRoot()) || 'spiffy-app',
         // TODO: Slugify name...
       },
       {
