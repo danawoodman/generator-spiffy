@@ -85,7 +85,7 @@ module.exports = yeoman.generators.Base.extend({
       this.copy('npmignore', '.npmignore')
       this.copy('changelog.md', 'changelog.md')
       this.template('.eslintrc', '.eslintrc')
-      this.template('package.json', 'package.json')
+      this.template('_package.json', 'package.json')
       this.template('license', 'license')
       this.template('readme.md', 'readme.md')
     },
